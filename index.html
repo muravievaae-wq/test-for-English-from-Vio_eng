@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adaptive English Placement Test</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'beige': '#F3EBE4',
+              'dark-red': '#730217',
+              'bordeaux': '#5C0B14',
+            }
+          }
+        }
+      }
+    </script>
   <script type="importmap">
 {
   "imports": {
@@ -16,7 +29,7 @@
 }
 </script>
 </head>
-  <body class="bg-slate-50 text-slate-800">
+  <body class="bg-beige text-black">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

@@ -51,7 +51,7 @@ export const TestFlow: React.FC<TestFlowProps> = ({ onTestComplete }) => {
     if (consent) {
       setStep('test');
     } else {
-      alert('You must agree to the processing of personal data to start the test.');
+      alert('Вы должны согласиться на обработку персональных данных, чтобы начать тест.');
     }
   };
 
@@ -169,43 +169,44 @@ export const TestFlow: React.FC<TestFlowProps> = ({ onTestComplete }) => {
   
   if (step === 'info') {
     return (
-      <div className="max-w-2xl mx-auto p-8 bg-white rounded-xl shadow-lg">
-        <h1 className="text-3xl font-bold mb-2 text-center text-slate-700">English Placement Test</h1>
-        <p className="text-center text-slate-500 mb-6">Please fill out this form to begin.</p>
+      <div className="max-w-2xl mx-auto p-8 bg-white rounded-xl shadow-lg border border-black">
+        <h1 className="text-3xl font-bold mb-1 text-center text-dark-red">Welcome to the English Placement Test</h1>
+        <p className="text-center text-gray-600 mb-6 italic">from Violetta 2025</p>
+        <p className="text-center text-gray-600 mb-6">Пожалуйста, заполните эту форму, чтобы начать.</p>
         <form onSubmit={handleStartTest} className="space-y-4">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-slate-600">Full Name</label>
-            <input type="text" id="name" value={studentInfo.name} onChange={e => setStudentInfo({...studentInfo, name: e.target.value})} className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" required />
+            <label htmlFor="name" className="block text-sm font-medium text-black">Полное имя</label>
+            <input type="text" id="name" value={studentInfo.name} onChange={e => setStudentInfo({...studentInfo, name: e.target.value})} className="mt-1 block w-full px-3 py-2 bg-white border border-black rounded-md text-sm shadow-sm placeholder-gray-500 text-black focus:outline-none focus:border-dark-red focus:ring-1 focus:ring-dark-red" required />
           </div>
           <div>
-            <label htmlFor="age" className="block text-sm font-medium text-slate-600">Age</label>
-            <input type="number" id="age" value={studentInfo.age} onChange={e => setStudentInfo({...studentInfo, age: e.target.value})} className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" required />
+            <label htmlFor="age" className="block text-sm font-medium text-black">Возраст</label>
+            <input type="number" id="age" value={studentInfo.age} onChange={e => setStudentInfo({...studentInfo, age: e.target.value})} className="mt-1 block w-full px-3 py-2 bg-white border border-black rounded-md text-sm shadow-sm placeholder-gray-500 text-black focus:outline-none focus:border-dark-red focus:ring-1 focus:ring-dark-red" required />
           </div>
            <div>
-              <label htmlFor="goals" className="block text-sm font-medium text-slate-600">What are your goals in learning English?</label>
-              <textarea id="goals" rows={3} value={studentInfo.goals} onChange={e => setStudentInfo({...studentInfo, goals: e.target.value})} className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" required />
+              <label htmlFor="goals" className="block text-sm font-medium text-black">Каковы ваши цели в изучении английского языка?</label>
+              <textarea id="goals" rows={3} value={studentInfo.goals} onChange={e => setStudentInfo({...studentInfo, goals: e.target.value})} className="mt-1 block w-full px-3 py-2 bg-white border border-black rounded-md text-sm shadow-sm placeholder-gray-500 text-black focus:outline-none focus:border-dark-red focus:ring-1 focus:ring-dark-red" required />
           </div>
           <div>
-              <label htmlFor="fears" className="block text-sm font-medium text-slate-600">What are your biggest fears or challenges in learning English?</label>
-              <textarea id="fears" rows={3} value={studentInfo.fears} onChange={e => setStudentInfo({...studentInfo, fears: e.target.value})} className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" required />
+              <label htmlFor="fears" className="block text-sm font-medium text-black">Каковы ваши самые большие страхи или трудности в изучении английского языка?</label>
+              <textarea id="fears" rows={3} value={studentInfo.fears} onChange={e => setStudentInfo({...studentInfo, fears: e.target.value})} className="mt-1 block w-full px-3 py-2 bg-white border border-black rounded-md text-sm shadow-sm placeholder-gray-500 text-black focus:outline-none focus:border-dark-red focus:ring-1 focus:ring-dark-red" required />
           </div>
           <div>
-              <label className="block text-sm font-medium text-slate-600">What is your preferred format for lessons?</label>
-              <select value={studentInfo.format} onChange={e => setStudentInfo({...studentInfo, format: e.target.value})} className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
-                  <option value="online">Online</option>
-                  <option value="offline">Offline</option>
-                  <option value="hybrid">Hybrid (Online & Offline)</option>
+              <label className="block text-sm font-medium text-black">Какой формат занятий вы предпочитаете?</label>
+              <select value={studentInfo.format} onChange={e => setStudentInfo({...studentInfo, format: e.target.value})} className="mt-1 block w-full px-3 py-2 bg-white border border-black rounded-md text-sm shadow-sm text-black focus:outline-none focus:border-dark-red focus:ring-1 focus:ring-dark-red">
+                  <option value="online">Онлайн</option>
+                  <option value="offline">Офлайн</option>
+                  <option value="hybrid">Гибридный (Онлайн и Офлайн)</option>
               </select>
           </div>
           <div className="flex items-start">
             <div className="flex items-center h-5">
-              <input id="consent" name="consent" type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)} className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded" />
+              <input id="consent" name="consent" type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)} className="focus:ring-dark-red h-4 w-4 text-dark-red border-gray-500 rounded" />
             </div>
             <div className="ml-3 text-sm">
-              <label htmlFor="consent" className="font-medium text-gray-700">I agree to the processing of my personal data.</label>
+              <label htmlFor="consent" className="font-medium text-gray-700">Я согласен(на) на обработку моих персональных данных.</label>
             </div>
           </div>
-          <button type="submit" className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-indigo-300" disabled={!consent}>Start Test</button>
+          <button type="submit" className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-dark-red hover:bg-bordeaux focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-red disabled:bg-bordeaux disabled:opacity-50" disabled={!consent}>Начать тест</button>
         </form>
       </div>
     );
@@ -216,33 +217,33 @@ export const TestFlow: React.FC<TestFlowProps> = ({ onTestComplete }) => {
       return <div className="text-center p-10">Loading questions...</div>;
     }
     return (
-      <div className="max-w-3xl mx-auto p-8 bg-white rounded-xl shadow-lg">
+      <div className="max-w-3xl mx-auto p-8 bg-white rounded-xl shadow-lg border border-black">
         <div className="mb-4">
           <div className="flex justify-between mb-1">
-            <span className="text-base font-medium text-indigo-700">Level: {currentLevel}</span>
-            <span className="text-sm font-medium text-indigo-700">Question {currentQuestionIndex + 1} of {questions.length}</span>
+            <span className="text-base font-medium text-bordeaux">Level: {currentLevel}</span>
+            <span className="text-sm font-medium text-bordeaux">Question {currentQuestionIndex + 1} of {questions.length}</span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2.5">
-            <div className="bg-indigo-600 h-2.5 rounded-full" style={{ width: `${progress}%` }}></div>
+            <div className="bg-dark-red h-2.5 rounded-full" style={{ width: `${progress}%` }}></div>
           </div>
         </div>
-        <h2 className="text-2xl font-semibold my-6 text-slate-800">{currentQuestion.questionText}</h2>
+        <h2 className="text-2xl font-semibold my-6 text-black">{currentQuestion.questionText}</h2>
         <div className="space-y-4">
           {currentQuestion.options?.map((option, index) => (
-            <label key={index} className={`flex items-center p-4 border rounded-lg cursor-pointer transition-all ${selectedOption === option ? 'border-indigo-500 bg-indigo-50 ring-2 ring-indigo-200' : 'border-slate-300 hover:bg-slate-100'}`}>
+            <label key={index} className={`flex items-center p-4 border rounded-lg cursor-pointer transition-all ${selectedOption === option ? 'border-dark-red bg-red-50 ring-2 ring-red-200' : 'border-black hover:bg-gray-100'}`}>
               <input
                 type="radio"
                 name="option"
                 value={option}
                 checked={selectedOption === option}
                 onChange={() => setSelectedOption(option)}
-                className="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500"
+                className="h-4 w-4 text-dark-red border-gray-500 focus:ring-dark-red"
               />
-              <span className="ml-3 text-slate-700">{option}</span>
+              <span className="ml-3 text-black">{option}</span>
             </label>
           ))}
         </div>
-        <button onClick={handleNextQuestion} disabled={!selectedOption} className="mt-8 w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-indigo-400">
+        <button onClick={handleNextQuestion} disabled={!selectedOption} className="mt-8 w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-dark-red hover:bg-bordeaux focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-red disabled:bg-bordeaux disabled:opacity-50">
           {currentQuestionIndex < questions.length - 1 ? 'Next Question' : 'Finish Section'}
         </button>
       </div>
@@ -251,26 +252,26 @@ export const TestFlow: React.FC<TestFlowProps> = ({ onTestComplete }) => {
 
   if (step === 'supplementary') {
     return (
-        <div className="max-w-3xl mx-auto p-8 bg-white rounded-xl shadow-lg space-y-8">
-            <h2 className="text-2xl font-bold text-center">Supplementary Tasks</h2>
+        <div className="max-w-3xl mx-auto p-8 bg-white rounded-xl shadow-lg border border-black space-y-8">
+            <h2 className="text-2xl font-bold text-center text-dark-red">Supplementary Tasks</h2>
             
             {/* Writing Task */}
-            <div className="p-6 border border-slate-200 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2 text-slate-700">Writing Task</h3>
-                <p className="text-slate-600 mb-4">{supplementaryTasks.writing?.prompt}</p>
+            <div className="p-6 border border-black rounded-lg">
+                <h3 className="text-xl font-semibold mb-2 text-bordeaux">Writing Task</h3>
+                <p className="text-gray-700 mb-4">{supplementaryTasks.writing?.prompt}</p>
                 <textarea 
                     value={writingResponse}
                     onChange={(e) => setWritingResponse(e.target.value)}
                     rows={6}
-                    className="w-full p-2 border border-slate-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                    className="w-full p-2 bg-white border border-black rounded-md focus:ring-dark-red focus:border-dark-red text-black"
                     placeholder="Type your response here..."
                 />
             </div>
 
             {/* Speaking Task */}
-            <div className="p-6 border border-slate-200 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2 text-slate-700">Speaking Task</h3>
-                <p className="text-slate-600 mb-4">{supplementaryTasks.speaking?.prompt}</p>
+            <div className="p-6 border border-black rounded-lg">
+                <h3 className="text-xl font-semibold mb-2 text-bordeaux">Speaking Task</h3>
+                <p className="text-gray-700 mb-4">{supplementaryTasks.speaking?.prompt}</p>
                 <div className="flex items-center space-x-4">
                     {!isRecording ? (
                         <button onClick={startRecording} disabled={isRecording} className="flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
@@ -287,10 +288,10 @@ export const TestFlow: React.FC<TestFlowProps> = ({ onTestComplete }) => {
                         </div>
                     )}
                 </div>
-                 <p className="text-xs text-slate-500 mt-2">Record your answer. You can re-record if you are not satisfied.</p>
+                 <p className="text-xs text-gray-500 mt-2">Record your answer. You can re-record if you are not satisfied.</p>
             </div>
 
-            <button onClick={handleFinishTest} className="mt-8 w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <button onClick={handleFinishTest} className="mt-8 w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-dark-red hover:bg-bordeaux focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-red">
                 Submit Test
             </button>
         </div>
@@ -299,11 +300,11 @@ export const TestFlow: React.FC<TestFlowProps> = ({ onTestComplete }) => {
 
   if (step === 'complete') {
     return (
-      <div className="max-w-2xl mx-auto p-8 text-center bg-white rounded-xl shadow-lg">
-        <h1 className="text-3xl font-bold text-green-600 mb-4">Thank You!</h1>
-        <p className="text-slate-600 mb-2">Your test has been submitted successfully.</p>
-        <p className="text-lg font-semibold text-slate-800 mb-4">Your preliminary level is: <span className="text-indigo-600">{finalPreliminaryLevel}</span></p>
-        <p className="text-slate-500">The final assessment will be assigned by a teacher after a manual review of your writing and speaking tasks. We will contact you shortly.</p>
+      <div className="max-w-2xl mx-auto p-8 text-center bg-white rounded-xl shadow-lg border border-black">
+        <h1 className="text-3xl font-bold text-dark-red mb-4">Thank You!</h1>
+        <p className="text-gray-700 mb-2">Your test has been submitted successfully.</p>
+        <p className="text-lg font-semibold text-black mb-4">Your preliminary level is: <span className="text-dark-red">{finalPreliminaryLevel}</span></p>
+        <p className="text-gray-600">The final assessment will be assigned by a teacher after a manual review of your writing and speaking tasks. We will contact you shortly.</p>
       </div>
     );
   }

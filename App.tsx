@@ -27,24 +27,24 @@ const LoginModal: React.FC<{ role: Role; onLogin: () => void; onCancel: () => vo
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-            <div className="bg-white rounded-lg shadow-xl p-8 w-full max-w-sm relative">
-                <button onClick={onCancel} className="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+            <div className="bg-white rounded-lg shadow-xl p-8 w-full max-w-sm relative border border-black">
+                <button onClick={onCancel} className="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
                     <CloseIcon />
                 </button>
-                <h2 className="text-2xl font-bold text-center mb-2 text-slate-800">
+                <h2 className="text-2xl font-bold text-center mb-2 text-dark-red">
                     {role === 'teacher' ? 'Teacher Login' : 'Admin Login'}
                 </h2>
-                <p className="text-center text-slate-500 mb-6">Enter the access code to continue.</p>
+                <p className="text-center text-gray-600 mb-6">Enter the access code to continue.</p>
                 <form onSubmit={handleSubmit}>
                     <input
                         type="password"
                         value={code}
                         onChange={(e) => { setCode(e.target.value); setError(''); }}
-                        className="w-full px-4 py-2 border border-slate-300 rounded-md text-center text-lg tracking-widest focus:ring-indigo-500 focus:border-indigo-500"
+                        className="w-full px-4 py-2 border border-black bg-white text-black rounded-md text-center text-lg tracking-widest focus:ring-dark-red focus:border-dark-red"
                         placeholder="••••••••"
                     />
                     {error && <p className="text-red-500 text-sm mt-2 text-center">{error}</p>}
-                    <button type="submit" className="w-full mt-6 bg-indigo-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-indigo-700 transition-colors">
+                    <button type="submit" className="w-full mt-6 bg-dark-red text-white font-semibold py-2 px-4 rounded-md hover:bg-bordeaux transition-colors">
                         Enter
                     </button>
                 </form>
@@ -86,18 +86,18 @@ const App: React.FC = () => {
       default:
         return (
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-slate-800">Welcome to the English Placement Test</h1>
-            <p className="text-xl text-slate-500 mt-4 max-w-2xl mx-auto">
+            <h1 className="text-5xl font-bold text-dark-red">Welcome to the English Placement Test</h1>
+            <p className="text-xl text-gray-700 mt-4 max-w-2xl mx-auto">
               This adaptive test will help determine your English proficiency level from A1 to C2.
             </p>
             <div className="mt-12 flex flex-col md:flex-row justify-center items-center gap-6">
-              <button onClick={() => setView('test')} className="flex items-center justify-center w-64 px-8 py-4 bg-indigo-600 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-indigo-700 transform hover:-translate-y-1 transition-all duration-300">
+              <button onClick={() => setView('test')} className="flex items-center justify-center w-64 px-8 py-4 bg-dark-red text-white text-lg font-semibold rounded-lg shadow-md hover:bg-bordeaux transform hover:-translate-y-1 transition-all duration-300">
                 <TestIcon /> Test (for students)
               </button>
-              <button onClick={() => setShowLogin('teacher')} className="flex items-center justify-center w-64 px-8 py-4 bg-slate-700 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-slate-800 transform hover:-translate-y-1 transition-all duration-300">
+              <button onClick={() => setShowLogin('teacher')} className="flex items-center justify-center w-64 px-8 py-4 bg-bordeaux text-white text-lg font-semibold rounded-lg shadow-md hover:bg-dark-red transform hover:-translate-y-1 transition-all duration-300">
                 <TeacherIcon /> Results (for teacher)
               </button>
-              <button onClick={() => setShowLogin('admin')} className="flex items-center justify-center w-64 px-8 py-4 bg-slate-700 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-slate-800 transform hover:-translate-y-1 transition-all duration-300">
+              <button onClick={() => setShowLogin('admin')} className="flex items-center justify-center w-64 px-8 py-4 bg-bordeaux text-white text-lg font-semibold rounded-lg shadow-md hover:bg-dark-red transform hover:-translate-y-1 transition-all duration-300">
                 <AdminIcon /> Admin - Question Bank
               </button>
             </div>
@@ -107,14 +107,14 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans">
+    <div className="min-h-screen bg-beige font-sans">
       <header className="bg-white shadow-sm">
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold text-indigo-600 cursor-pointer" onClick={() => setView('home')}>
+          <div className="text-2xl font-bold text-dark-red cursor-pointer" onClick={() => setView('home')}>
             English Test Portal
           </div>
            {view !== 'home' && (
-              <button onClick={() => setView('home')} className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-indigo-600">
+              <button onClick={() => setView('home')} className="px-4 py-2 text-sm font-medium text-bordeaux hover:text-dark-red">
                 &larr; Back to Home
               </button>
             )}
