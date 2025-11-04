@@ -1,0 +1,7 @@
+{
+  "name": "Adaptive English Placement Test",
+  "description": "An adaptive English placement test (A1-C2) for new students. It assesses grammar/vocabulary, includes writing/speaking tasks for manual review, and provides a preliminary level assessment for teachers.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
